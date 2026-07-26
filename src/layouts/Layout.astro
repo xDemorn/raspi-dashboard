@@ -6,18 +6,51 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Raspi Dashboard</title>
 	</head>
 	<body>
-		<slot />
+		<div class="m-24">
+			<slot />
+		</div>
+		<footer>
+			<p></p>
+			<p>Version: <strong>0.1.0</strong> | Last Update: <strong>26/7/2026</strong></p>
+		</footer>
 	</body>
 </html>
 
 <style>
-	html,
+	html {
+		width: 100dvw;
+		height: 100dvh;
+		display: flex;
+	}
+
 	body {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		background: #242424;
+		color: white;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		overflow: hidden;
+	}
+	
+	footer {
+		display: flex;
+		justify-content: space-between;
+		background: #484848;
+		padding: 0 1rem;
+		height: 48px;
+		align-items: center;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.m-24 {
+		margin: 24px;
+		flex: 1;
 	}
 </style>

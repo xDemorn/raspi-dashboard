@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Grid from '../layouts/Grid.astro';
 import Service from '../components/Service.astro';
@@ -8,15 +7,20 @@ import Service from '../components/Service.astro';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 
 const services = [
-  { name: 'pi-hole admin', link: '/admin' },
-  { name: 'Markdown test', link: '/test.md' },
+  { name: 'pi-hole admin', link: '/admin', desc: 'Admin panel for pi-hole' },
 ];
 ---
 
 <Layout>
 	<Grid>
 		{services.map((service) => (
-			<Service name={service.name} link={service.link} />
+			<Service name={service.name} link={service.link} desc={service.desc} />
 		))}
 	</Grid>
 </Layout>
+
+<style>
+	:root {
+		--grid-size: 5;
+	}
+</style>
