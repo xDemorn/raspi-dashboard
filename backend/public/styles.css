@@ -1,0 +1,38 @@
+:root {
+   --primary-color: #3b82f6;
+   --secondary-color: #0f172a;
+   --terciary-color: #94acb8;
+   --neutral-color: #f8fafc;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   padding: 20px;
+   background-color: #101415;
+}
+.container {
+   max-width: 800px;
+   margin: 0 auto;
+   background-color: white;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+h1 {
+   color: #333;
+}
+.info-section {
+   margin: 15px 0;
+   padding: 10px;
+   background-color: #f9f9f9;
+   border-left: 4px solid #007bff;
+   border-radius: 4px;
+}
+.label {
+   font-weight: bold;
+   color: #555;
+}
+.value {
+   color: #007bff;
+   margin-left: 10px;
+}
