@@ -1,5 +1,5 @@
 {
-  "name": "raspi-dashboard",
+  "name": "raspi-dashboard-backend",
   "version": "0.0.1",
   "type": "module",
   "engines": {
@@ -10,7 +10,6 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "ejs": "6.0.1",
     "express": "5.2.1",
     "systeminformation": "5.33.1"
   },
