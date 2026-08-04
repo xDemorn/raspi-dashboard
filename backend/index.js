@@ -25,6 +25,9 @@ const values = {
 
 app.get("/system", async (req, res) => {
   const main = await si.get(values).catch(error => res.status(500).send(error));
+  
+  // only show the default network interface
+  main.networkInterfaces = main.networkInterfaces.filter(iface => iface.default);
 
   // const diskInfo = await si.fsSize('/dev/nvme0n1').then(data => data.filter(disk => disk.mount === '/')).catch(error => res.status(500).send(error));
   // console.log(diskInfo);
