@@ -1,5 +1,5 @@
 {
-  "name": "raspi-dashboard",
+  "name": "raspi-dashboard-frontend",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,7 +12,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^11.0.3",
     "astro": "7.1.1",
     "systeminformation": "^5.33.1"
   }

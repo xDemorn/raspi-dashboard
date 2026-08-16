@@ -1,12 +1,16 @@
+---
+const { gridSize = 3 } = Astro.props;
+---
+
 <div class="grid">
   <slot />
 </div>
 
-<style>
+<style define:vars={{ gridSize }}>
   .grid {
     display: grid;
-    grid-template-columns: repeat(var(--grid-size), minmax(0, 1fr));
-    grid-template-rows: repeat(var(--grid-size), minmax(0, 1fr));
+    grid-template-columns: repeat(var(--gridSize), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--gridSize), minmax(0, 1fr));
     gap: 1rem;
     width: 100%;
     height: 100%;

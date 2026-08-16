@@ -9,7 +9,7 @@ const PORT = 3000;
 const values = {
   'cpuCurrentSpeed': '*',
   'fullLoad': '*',
-  'processess': '*',
+  'services': '*',
   'mem': 'total, used, free',
   'os': '*',
   // 'diskLayout': 'device, type, name, size',
@@ -20,10 +20,7 @@ const values = {
 // Serve static files
 // app.use(express.static('public'));
 
-// Configure Express to use EJS
-// app.set("view engine", "ejs");
-
-app.get("/system", async (req, res) => {
+app.get("/api/system", async (req, res) => {
   const main = await si.get(values).catch(error => res.status(500).send(error));
   
   // only show the default network interface

@@ -3,47 +3,41 @@ import Main from '../layouts/Main.astro';
 import Grid from '../layouts/Grid.astro';
 import Service from '../components/Service.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
-
 const services = [
   { name: 'pi-hole admin', link: '/admin', desc: 'Admin panel for pi-hole' },
 ];
+
+// let data: any = null;
+
+// setTimeout(async () => {
+//   data = await fetch('http://localhost:3000/api/system').then((res) => res.json()).then((data) => console.log(data)).catch((err) => console.error(err));
+// }, 3000);
 ---
 
 <Main>
-	<Grid>
+	<Fragment slot="header">
+		<span>header content</span>
+		<!-- <span>Full load: {data?.fullLoad}%</span> -->
+	</Fragment>
+
+	<Fragment slot="aside">
+		<span>aside content</span>
+	</Fragment>
+
+	<Grid gridSize={5}>
 		{services.map((service) => (
 			<Service name={service.name} link={service.link} desc={service.desc} />
 		))}
 	</Grid>
 </Main>
 
-<style>
-	:root {
-		--grid-size: 5;
-	}
-</style>
-
 <script>
-	const eventSource = new EventSource('/api/system-stream');
+	// make a recursive call to the system function every 3 seconds
+	setInterval(() => {
+		fetch('http://localhost:3000/api/system').then((res) => res.json()).then((data) => {
+			console.log(data);
+		}).catch((err) => console.error(err));
+	}, 3000);
 
-	eventSource.onmessage = (event) => {
-		try {
-			const data = JSON.parse(event.data);
-			// updateUI(data);
-			console.log(data)
-		} catch (error) {
-			console.error('Error parsing data:', error);
-		}
-	};
-
-	eventSource.onerror = (error) => {
-		console.error('Connection error:', error);
-		// document.getElementById('system-info').innerHTML = '<p style="color: red;">Connection lost. Reconnecting...</p>';
-		eventSource.close();
-		
-		// Reconnect after 3 seconds
-		// setTimeout(startMonitoring, 3000);
-	};
+	
 </script>
