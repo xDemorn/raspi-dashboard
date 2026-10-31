@@ -8,3 +8,29 @@ const { name, link, desc } = Astro.props;
 
   <a href={link}>Open</a>
 </article>
+
+<style>
+  .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #484848;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: box-shadow 250ms ease;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      text-align: start;
+      flex: 1;
+      width: 100%;
+    }
+  }
+</style>

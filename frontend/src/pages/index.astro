@@ -20,23 +20,25 @@ const services = [
 		<!-- <span>Full load: {data?.fullLoad}%</span> -->
 	</Fragment>
 
-	<Fragment slot="aside">
-		<span>aside content</span>
-	</Fragment>
-
 	<Grid gridSize={5}>
 		{services.map((service) => (
 			<Service name={service.name} link={service.link} desc={service.desc} />
 		))}
 	</Grid>
+
+	<Fragment slot="aside">
+		<span>aside content</span>
+	</Fragment>
 </Main>
 
 <script>
+	import type { Root } from "@/interfaces";
+
 	// make a recursive call to the system function every 3 seconds
 	setInterval(() => {
-		fetch('http://localhost:3000/api/system').then((res) => res.json()).then((data) => {
+		fetch('http://localhost:3000/api/system').then((res) => res.json()).then((data: Root) => {
 			console.log(data);
-		}).catch((err) => console.error(err));
+		}).catch((err) => console.log(err));
 	}, 3000);
 
 	

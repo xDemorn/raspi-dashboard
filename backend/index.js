@@ -1,10 +1,12 @@
 //server.js
 import express from "express";
 import si from "systeminformation";
+import cors from "cors";
 import path from "path";
 
 const app = express();
-const PORT = 3000;
+app.use(cors());
+const PORT = process.env.PORT || 3000;
 
 const values = {
   'cpuCurrentSpeed': '*',
@@ -29,7 +31,7 @@ app.get("/api/system", async (req, res) => {
   // const diskInfo = await si.fsSize('/dev/nvme0n1').then(data => data.filter(disk => disk.mount === '/')).catch(error => res.status(500).send(error));
   // console.log(diskInfo);
   
-  res.send(main);
+  res.status(200).send(main);
 });
 
 app.listen(PORT, (req, res) => {
