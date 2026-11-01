@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="public/global.css">
+    <script src="src/main.js" type="module"></script>
+    <!-- CUSTOM COMPONENTS -->
+    <script src="src/components/service.component.js" type="module"></script>
+    <link rel="icon" type="image/x-icon" href="public/favicon.svg">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <img class="icon s-36" src="public/icons/server.svg" alt="Server">
+            <h1 i18n="header.title">Welcome to the Dashboard</h1>
+        </div>
+        <div class="right">
+            <p i18n="header.cpu">cpu usage</p>
+            <p i18n="header.ram">ram usage</p>
+        </div>
+    </header>
+    <main id="services">
+        <article class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="image-container">
+                        <img src="public/icons/services/pi-hole.svg" alt="Service" class="icon">
+                    </div>
+                </div>
+                <p class="title" i18n="services.pi-hole">Card Title</p>
+            </div>
+            <button href="/admin" i18n="services.launch">Button</button>
+        </article>
+
+        <article class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="image-container">
+                        <img src="public/icons/services/pi-hole.svg" alt="Service" class="icon">
+                    </div>
+                </div>
+                <p class="title" i18n="services.pi-hole">Card Title</p>
+            </div>
+            <button href="/admin" i18n="services.launch">Button</button>
+        </article>
+
+        <article class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="image-container">
+                        <img src="public/icons/services/pi-hole.svg" alt="Service" class="icon">
+                    </div>
+                </div>
+                <p class="title" i18n="services.pi-hole">Card Title</p>
+            </div>
+            <button href="/admin" i18n="services.launch">Button</button>
+        </article>
+
+        <service-component></service-component>
+    </main>
+    <div id="sidebar-toggle m-4">
+        <img class="icon pointer" src="public/icons/right_panel_open.svg" alt="Open sidebar">
+        <img class="icon pointer active" src="public/icons/right_panel_close.svg" alt="Close sidebar">
+    </div>
+    <aside class="open">aside</aside>
+</body>
+</html>

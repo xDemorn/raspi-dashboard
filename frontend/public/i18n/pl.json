@@ -1,0 +1,6 @@
+{
+    "test": "To jest prosty ciąg testowy",
+    "nested": {
+        "test": "To jest zagnieżdżony ciąg testowy"
+    }
+}

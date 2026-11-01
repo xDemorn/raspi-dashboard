@@ -1,0 +1,6 @@
+{
+    "test": "Aquest és un string de prova simple",
+    "nested": {
+        "test": "Aquest és un string de prova anidat"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "test": "This is a simple test string",
+    "header": {
+        "title": "HomeServer",
+        "cpu": "CPU",
+        "ram": "RAM"
+    },
+    "services": {
+        "pi-hole": "Pi-hole",
+        "launch": "Launch"
+    }
+}

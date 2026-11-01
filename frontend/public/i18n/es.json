@@ -1,0 +1,6 @@
+{
+    "test": "Esto es una cadena de prueba simple",
+    "nested": {
+        "test": "Esto es una cadena de prueba anidada"
+    }
+}
