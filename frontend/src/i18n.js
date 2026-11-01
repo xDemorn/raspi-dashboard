@@ -1,3 +1,5 @@
+import { $$ } from './utils.js';
+
 // we define the variables for the supported languages, the translation object and a default fallback language in case we can't detect the user's language
 const FALLBACK = 'en';
 const SUPPORTED = ['en', 'ca', 'es', 'pl'];
@@ -6,7 +8,7 @@ const TRANSLATIONS = {};
 // we detect the user's language from the URL query parameter, the browser's language or the fallback language
 const params = new URLSearchParams(window.location.search);
 const detected = (params.get('lang') || navigator.language || FALLBACK).split('-')[0];
-const locale = SUPPORTED.includes(detected) ? detected : FALLBACK;
+let locale = SUPPORTED.includes(detected) ? detected : FALLBACK;
 
 // we define the URLs for the translation files for the supported languages
 const locales = SUPPORTED.map(lang => new URL(`../public/i18n/${lang}.json`, import.meta.url));
@@ -34,8 +36,35 @@ export function translate(key) {
     return key.split('.').reduce((acc, part) => acc?.[part], TRANSLATIONS[locale]) ?? key;
 }
 
-// TODO: add a function to change the current locale and reload the translations
-export function setLocale(newLocale) {}
+/**
+ * @returns the current locale
+ */
+export function getLocale() {
+    return locale;
+}
+
+/**
+ * Changes the current locale and re-translates the page in place.
+ * @param {string} lang the locale to switch to
+ */
+export function setLocale(lang) {
+    if (!SUPPORTED.includes(lang)) return;
+
+    locale = lang;
+    document.documentElement.lang = lang;
+
+    translatePage();
+}
+
+/**
+ * Translates every element with an `i18n` attribute inside the given root.
+ * @param {ParentNode} root
+ */
+function translatePage(root = document) {
+    $$('[i18n]', root).forEach(el => {
+        el.textContent = translate(el.getAttribute('i18n'));
+    });
+}
 
 /**
  * Checks if a given locale exists in the supported locales and has translations loaded.
@@ -46,6 +75,4 @@ function doesLocaleExist(locale) {
     return SUPPORTED.includes(locale) && TRANSLATIONS[locale] !== undefined;
 }
 
-// TODO: build the language selector
-
-// TODO: translate the page on load
+translatePage();

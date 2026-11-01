@@ -1,6 +1,17 @@
 {
-    "test": "To jest prosty ciąg testowy",
-    "nested": {
-        "test": "To jest zagnieżdżony ciąg testowy"
+    "header": {
+        "title": "Serwer domowy",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "language-selector": {
+            "en": "English",
+            "ca": "Català",
+            "es": "Español",
+            "pl": "Polski"
+        }
+    },
+    "services": {
+        "pi-hole": "Pi-hole",
+        "launch": "Otwórz"
     }
 }

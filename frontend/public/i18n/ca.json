@@ -1,6 +1,17 @@
 {
-    "test": "Aquest és un string de prova simple",
-    "nested": {
-        "test": "Aquest és un string de prova anidat"
+    "header": {
+        "title": "Servidor domèstic",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "language-selector": {
+            "en": "English",
+            "ca": "Català",
+            "es": "Español",
+            "pl": "Polski"
+        }
+    },
+    "services": {
+        "pi-hole": "Pi-hole",
+        "launch": "Obrir"
     }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="public/global.css">
+    <link rel="stylesheet" href="public/components/service.component.css">
     <script src="src/main.js" type="module"></script>
     <!-- CUSTOM COMPONENTS -->
     <script src="src/components/service.component.js" type="module"></script>
@@ -16,53 +17,61 @@
             <img class="icon s-36" src="public/icons/server.svg" alt="Server">
             <h1 i18n="header.title">Welcome to the Dashboard</h1>
         </div>
+
         <div class="right">
             <p i18n="header.cpu">cpu usage</p>
             <p i18n="header.ram">ram usage</p>
+
+            <div class="language-selector">
+                <button class="language-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18M12 3c2.5 2.6 3.9 5.6 3.9 9s-1.4 6.4-3.9 9c-2.5-2.6-3.9-5.6-3.9-9S9.5 5.6 12 3Z"/>
+                    </svg>
+                    <span class="language-code">EN</span>
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                </button>
+
+                <div class="language-menu" role="listbox" aria-label="Select language" hidden>
+                    <button class="language-option" type="button" role="option" data-locale="en">
+                        <img src="public/i18n/flags/us.svg" alt="flag of the united states">
+                        <span>English</span>
+                        <span class="language-check" aria-hidden="true">✓</span>
+                    </button>
+                    <button class="language-option" type="button" role="option" data-locale="ca">
+                        <img src="public/i18n/flags/ca.svg" alt="flag of catalonia">
+                        <span>Català</span>
+                        <span class="language-check" aria-hidden="true">✓</span>
+                    </button>
+                    <button class="language-option" type="button" role="option" data-locale="es">
+                        <img src="public/i18n/flags/es.svg" alt="flag of spain">
+                        <span>Español</span>
+                        <span class="language-check" aria-hidden="true">✓</span>
+                    </button>
+                    <button class="language-option" type="button" role="option" data-locale="pl">
+                        <img src="public/i18n/flags/pl.svg" alt="flag of poland">
+                        <span>Polski</span>
+                        <span class="language-check" aria-hidden="true">✓</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
+
     <main id="services">
-        <article class="card">
-            <div class="content">
-                <div class="row">
-                    <div class="image-container">
-                        <img src="public/icons/services/pi-hole.svg" alt="Service" class="icon">
-                    </div>
-                </div>
-                <p class="title" i18n="services.pi-hole">Card Title</p>
-            </div>
-            <button href="/admin" i18n="services.launch">Button</button>
-        </article>
-
-        <article class="card">
-            <div class="content">
-                <div class="row">
-                    <div class="image-container">
-                        <img src="public/icons/services/pi-hole.svg" alt="Service" class="icon">
-                    </div>
-                </div>
-                <p class="title" i18n="services.pi-hole">Card Title</p>
-            </div>
-            <button href="/admin" i18n="services.launch">Button</button>
-        </article>
-
-        <article class="card">
-            <div class="content">
-                <div class="row">
-                    <div class="image-container">
-                        <img src="public/icons/services/pi-hole.svg" alt="Service" class="icon">
-                    </div>
-                </div>
-                <p class="title" i18n="services.pi-hole">Card Title</p>
-            </div>
-            <button href="/admin" i18n="services.launch">Button</button>
-        </article>
-
-        <service-component></service-component>
+        <service-component icon="public/icons/services/pi-hole.svg" title="services.pi-hole" href="/admin"></service-component>
     </main>
-    <div id="sidebar-toggle m-4">
-        <img class="icon pointer" src="public/icons/right_panel_open.svg" alt="Open sidebar">
-        <img class="icon pointer active" src="public/icons/right_panel_close.svg" alt="Close sidebar">
+
+    <div id="sidebar-toggle" class="m-4">
+        <button class="pointer">
+            <img class="icon" src="public/icons/right_panel_open.svg" alt="Open sidebar">
+        </button>
+        <button class="pointer active">
+            <img class="icon" src="public/icons/right_panel_close.svg" alt="Close sidebar">
+        </button>
+
     </div>
     <aside class="open">aside</aside>
 </body>

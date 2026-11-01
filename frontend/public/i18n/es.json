@@ -1,6 +1,17 @@
 {
-    "test": "Esto es una cadena de prueba simple",
-    "nested": {
-        "test": "Esto es una cadena de prueba anidada"
+    "header": {
+        "title": "Servidor doméstico",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "language-selector": {
+            "en": "English",
+            "ca": "Català",
+            "es": "Español",
+            "pl": "Polski"
+        }
+    },
+    "services": {
+        "pi-hole": "Pi-hole",
+        "launch": "Abrir"
     }
 }

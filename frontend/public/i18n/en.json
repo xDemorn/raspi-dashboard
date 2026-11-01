@@ -1,9 +1,14 @@
 {
-    "test": "This is a simple test string",
     "header": {
         "title": "HomeServer",
         "cpu": "CPU",
-        "ram": "RAM"
+        "ram": "RAM",
+        "language-selector": {
+            "en": "English",
+            "ca": "Català",
+            "es": "Español",
+            "pl": "Polski"
+        }
     },
     "services": {
         "pi-hole": "Pi-hole",
