@@ -34,6 +34,10 @@ app.get("/api/system", async (req, res) => {
   res.status(200).send(main);
 });
 
+app.get((req, res) => {
+  res.status(200).send({ message: "The route you are trying is not valid." });
+});
+
 app.listen(PORT, (req, res) => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
