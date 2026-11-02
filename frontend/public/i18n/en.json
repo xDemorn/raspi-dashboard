@@ -5,9 +5,9 @@
         "ram": "RAM",
         "language-selector": {
             "en": "English",
-            "ca": "Català",
-            "es": "Español",
-            "pl": "Polski"
+            "ca": "Catalan",
+            "es": "Spanish",
+            "pl": "Polish"
         }
     },
     "services": {

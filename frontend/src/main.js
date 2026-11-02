@@ -48,3 +48,13 @@ document.addEventListener('keydown', event => {
 });
 
 renderSelector();
+
+$('')
+
+function openSidebar() {
+    console.log('open sidebar');
+}
+
+function closeSidebar() {
+    console.log('close sidebar');
+}

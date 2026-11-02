@@ -6,9 +6,8 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="public/global.css">
     <link rel="stylesheet" href="public/components/service.component.css">
-    <script src="src/main.js" type="module"></script>
-    <!-- CUSTOM COMPONENTS -->
     <script src="src/components/service.component.js" type="module"></script>
+    <script src="src/main.js" type="module"></script>
     <link rel="icon" type="image/x-icon" href="public/favicon.svg">
 </head>
 <body>
@@ -37,22 +36,22 @@
                 <div class="language-menu" role="listbox" aria-label="Select language" hidden>
                     <button class="language-option" type="button" role="option" data-locale="en">
                         <img src="public/i18n/flags/us.svg" alt="flag of the united states">
-                        <span>English</span>
+                        <span i18n="header.language-selector.en">en</span>
                         <span class="language-check" aria-hidden="true">✓</span>
                     </button>
                     <button class="language-option" type="button" role="option" data-locale="ca">
                         <img src="public/i18n/flags/ca.svg" alt="flag of catalonia">
-                        <span>Català</span>
+                        <span i18n="header.language-selector.ca">ca</span>
                         <span class="language-check" aria-hidden="true">✓</span>
                     </button>
                     <button class="language-option" type="button" role="option" data-locale="es">
                         <img src="public/i18n/flags/es.svg" alt="flag of spain">
-                        <span>Español</span>
+                        <span i18n="header.language-selector.es">es</span>
                         <span class="language-check" aria-hidden="true">✓</span>
                     </button>
                     <button class="language-option" type="button" role="option" data-locale="pl">
                         <img src="public/i18n/flags/pl.svg" alt="flag of poland">
-                        <span>Polski</span>
+                        <span i18n="header.language-selector.pl">pl</span>
                         <span class="language-check" aria-hidden="true">✓</span>
                     </button>
                 </div>
@@ -61,17 +60,17 @@
     </header>
 
     <main id="services">
-        <service-component icon="public/icons/services/pi-hole.svg" title="services.pi-hole" href="/admin"></service-component>
+        <service-component icon="public/icons/services/pi-hole.svg" title="Pi Hole" href="/admin"></service-component>
+        <service-component icon="public/icons/services/pdf.svg" title="PDFs" href="/pages/pdfs"></service-component>
     </main>
 
     <div id="sidebar-toggle" class="m-4">
-        <button class="pointer">
+        <button id="open-sidebar" class="btn-sidebar-toggle pointer">
             <img class="icon" src="public/icons/right_panel_open.svg" alt="Open sidebar">
         </button>
-        <button class="pointer active">
+        <button id="close-sidebar" class="btn-sidebar-toggle pointer active">
             <img class="icon" src="public/icons/right_panel_close.svg" alt="Close sidebar">
         </button>
-
     </div>
     <aside class="open">aside</aside>
 </body>

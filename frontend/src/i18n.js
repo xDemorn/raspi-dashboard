@@ -62,6 +62,9 @@ export function setLocale(lang) {
  */
 function translatePage(root = document) {
     $$('[i18n]', root).forEach(el => {
+        // custom elements translate their own content; overwriting textContent would wipe it
+        if (el.localName.includes('-')) return;
+
         el.textContent = translate(el.getAttribute('i18n'));
     });
 }

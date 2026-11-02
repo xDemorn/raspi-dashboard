@@ -4,9 +4,9 @@
         "cpu": "CPU",
         "ram": "RAM",
         "language-selector": {
-            "en": "English",
-            "ca": "Català",
-            "es": "Español",
+            "en": "Angielski",
+            "ca": "Kataloński",
+            "es": "Hiszpański",
             "pl": "Polski"
         }
     },

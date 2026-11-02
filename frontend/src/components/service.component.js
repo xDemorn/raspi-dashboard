@@ -17,7 +17,7 @@ template.innerHTML = `
 `;
 
 class ServiceComponent extends HTMLElement {
-    static observedAttributes = ['icon', 'title', 'href'];
+    static observedAttributes = ['icon', 'title', 'i18n', 'href'];
 
     #button;
     #image;
@@ -47,7 +47,8 @@ class ServiceComponent extends HTMLElement {
     #render() {
         const icon = this.getAttribute('icon');
         const title = this.getAttribute('title');
-        const label = title ? translate(title) : '';
+        const key = title ? null : this.getAttribute('i18n');
+        const label = title ?? (key ? translate(key) : '');
 
         if (icon) {
             this.#image.src = icon;
@@ -57,7 +58,13 @@ class ServiceComponent extends HTMLElement {
 
         this.#image.alt = label || 'Service';
         this.#title.textContent = label;
-        this.#title.setAttribute('i18n', title ?? '');
+
+        if (key) {
+            this.#title.setAttribute('i18n', key);
+        } else {
+            this.#title.removeAttribute('i18n');
+        }
+
         this.#button.textContent = translate('services.launch');
     }
 }

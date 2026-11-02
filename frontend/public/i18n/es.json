@@ -4,10 +4,10 @@
         "cpu": "CPU",
         "ram": "RAM",
         "language-selector": {
-            "en": "English",
-            "ca": "Català",
+            "en": "Inglés",
+            "ca": "Catalán",
             "es": "Español",
-            "pl": "Polski"
+            "pl": "Polaco"
         }
     },
     "services": {
