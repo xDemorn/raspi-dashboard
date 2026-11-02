@@ -17,7 +17,7 @@ template.innerHTML = `
 `;
 
 class ServiceComponent extends HTMLElement {
-    static observedAttributes = ['icon', 'title', 'i18n', 'href'];
+    static observedAttributes = ['icon', 'name', 'i18n', 'href'];
 
     #button;
     #image;
@@ -46,7 +46,7 @@ class ServiceComponent extends HTMLElement {
 
     #render() {
         const icon = this.getAttribute('icon');
-        const title = this.getAttribute('title');
+        const title = this.getAttribute('name');
         const key = title ? null : this.getAttribute('i18n');
         const label = title ?? (key ? translate(key) : '');
 

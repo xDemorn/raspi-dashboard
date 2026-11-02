@@ -60,18 +60,18 @@
     </header>
 
     <main id="services">
-        <service-component icon="public/icons/services/pi-hole.svg" title="Pi Hole" href="/admin"></service-component>
-        <service-component icon="public/icons/services/pdf.svg" title="PDFs" href="/pages/pdfs"></service-component>
+        <service-component icon="public/icons/services/pi-hole.svg" name="Pi Hole" href="/admin"></service-component>
+        <service-component icon="public/icons/services/pdf.svg" name="PDFs" href="/pages/pdfs"></service-component>
     </main>
 
-    <div id="sidebar-toggle" class="m-4">
-        <button id="open-sidebar" class="btn-sidebar-toggle pointer">
+    <div id="sidebar-toggle">
+        <button id="open-sidebar" class="btn-sidebar-toggle pointer active" data-tooltip="Open a sidebar with more metrics" data-tooltip-position="left">
             <img class="icon" src="public/icons/right_panel_open.svg" alt="Open sidebar">
         </button>
-        <button id="close-sidebar" class="btn-sidebar-toggle pointer active">
+        <button id="close-sidebar" class="btn-sidebar-toggle pointer" data-tooltip="Close the sidebar">
             <img class="icon" src="public/icons/right_panel_close.svg" alt="Close sidebar">
         </button>
     </div>
-    <aside class="open">aside</aside>
+    <aside>aside</aside>
 </body>
 </html>

@@ -1,6 +1,11 @@
 import { getLocale, setLocale } from './i18n.js';
 import { $, $$ } from './utils.js';
 
+const elements = {
+    sidebarToggle: $('#sidebar-toggle'),
+    aside: $('aside'),
+}
+
 const selector = $('.language-selector');
 const trigger = $('.language-trigger', selector);
 const menu = $('.language-menu', selector);
@@ -49,12 +54,11 @@ document.addEventListener('keydown', event => {
 
 renderSelector();
 
-$('')
-
-function openSidebar() {
-    console.log('open sidebar');
+function toggleSidebarClass() {
+    $$('.btn-sidebar-toggle')?.forEach(btn => btn.classList.toggle('active'));
+    document.body.classList.toggle('show-sidebar');
 }
 
-function closeSidebar() {
-    console.log('close sidebar');
-}
+$('#open-sidebar', elements.sidebarToggle)?.addEventListener('click', toggleSidebarClass);
+
+$('#close-sidebar', elements.sidebarToggle)?.addEventListener('click', toggleSidebarClass);
