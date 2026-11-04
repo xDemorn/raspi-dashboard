@@ -1,4 +1,5 @@
 {
+    "loading": "Ładowanie, proszę czekać...",
     "header": {
         "title": "Serwer domowy",
         "cpu": "CPU",

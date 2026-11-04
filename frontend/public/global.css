@@ -32,15 +32,55 @@ html {
     color: var(--text-color);
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 48px;
     grid-template-rows: 64px 1fr;
-    grid-template-areas: "header header" "main sidebar-toggle";
+    grid-template-columns: 1fr 48px 0;
+    grid-template-areas: "header header header" "main sidebar-toggle sidebar-content";
+    transition: grid-template-columns 0.25s ease-in-out;
+
+    div#loading-screen {
+        position: absolute;
+        inset: 0;
+        background: var(--background-color);
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+
+        &.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 72px;
+            height: 72px;
+            display: grid;
+            place-items: center;
+            border: 2px solid rgb(173 198 255 / 0.25);
+            border-top-color: var(--header-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+
+            &::after {
+                content: '';
+                width: 14px;
+                height: 14px;
+                background: var(--header-border-color);
+                border-radius: 50%;
+                animation: pulse 1s ease-in-out infinite alternate;
+            }
+        }
+    }
 
     header {
         grid-area: header;
@@ -55,8 +95,13 @@ body {
             justify-content: flex-start;
             margin-left: 1rem;
 
+            a {
+                all: unset;
+                color: var(--header-color);
+            }
+
             .icon {
-                margin-right: .25rem;
+                margin-right: 1rem;
             }
         }
 
@@ -335,4 +380,17 @@ body {
 [data-tooltip]:hover::before {
     opacity: 1;
     visibility: visible;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
 }

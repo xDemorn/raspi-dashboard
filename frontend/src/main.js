@@ -62,3 +62,11 @@ function toggleSidebarClass() {
 $('#open-sidebar', elements.sidebarToggle)?.addEventListener('click', toggleSidebarClass);
 
 $('#close-sidebar', elements.sidebarToggle)?.addEventListener('click', toggleSidebarClass);
+
+// random delay between 800 and 1200ms so the loading text has time to be read
+setTimeout(() => {
+    const screen = $('#loading-screen');
+
+    screen?.addEventListener('transitionend', () => screen.remove(), { once: true });
+    screen?.classList.add('hidden');
+}, 800 + Math.random() * 400);

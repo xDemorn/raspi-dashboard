@@ -1,4 +1,5 @@
 {
+    "loading": "Loading, please wait...",
     "header": {
         "title": "HomeServer",
         "cpu": "CPU",
