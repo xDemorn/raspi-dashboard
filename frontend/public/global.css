@@ -47,19 +47,14 @@ body {
     div#loading-screen {
         position: absolute;
         inset: 0;
+        z-index: 100;
         background: var(--background-color);
-        opacity: 1;
-        transition: opacity 0.5s ease-in-out;
+        animation: hide-loading 0.5s ease-in-out 1s forwards;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2.5rem;
-
-        &.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
 
         .spinner {
             width: 72px;
@@ -254,6 +249,7 @@ body {
         font: inherit;
         font-size: .95rem;
         text-align: left;
+        text-decoration: none;
         cursor: pointer;
         transition: background 250ms ease-in-out;
 
@@ -274,7 +270,7 @@ body {
             visibility: hidden;
         }
 
-        &[aria-selected="true"] {
+        &[aria-current="true"] {
             background: rgba(173, 198, 255, .08);
             border-color: rgba(173, 198, 255, .35);
 
@@ -380,6 +376,13 @@ body {
 [data-tooltip]:hover::before {
     opacity: 1;
     visibility: visible;
+}
+
+@keyframes hide-loading {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 @keyframes spin {

@@ -1,14 +1,10 @@
-service-component {
-    display: contents;
-
-    article.card {
-        display: flex;
-        flex-direction: column;
-        background: var(--card-background);
-        border: 1px solid var(--card-outline);
-        border-radius: 1rem;
-        padding: 1rem;
-    }
+article.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    border: 1px solid var(--card-outline);
+    border-radius: 1rem;
+    padding: 1rem;
 
     .content {
         flex: 1;
@@ -25,7 +21,6 @@ service-component {
             .icon {
                 height: 32px;
                 width: 32px;
-                color: pink;
             }
         }
 
@@ -35,8 +30,9 @@ service-component {
         }
     }
 
-    button {
+    .launch {
         background: var(--card-button);
+        color: var(--card-button-color);
         border: none;
         border-radius: .5rem;
         padding: .5rem 1rem;
@@ -48,6 +44,7 @@ service-component {
         align-items: center;
         justify-content: center;
         font-size: 1.1rem;
+        text-decoration: none;
 
         &:hover {
             background: var(--card-button-hover);
