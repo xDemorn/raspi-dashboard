@@ -24,12 +24,4 @@ describe('AppController', () => {
       await expect(appController.getSystemInfo()).resolves.toBe(systemInfo);
     });
   });
-
-  describe('notFound', () => {
-    it('returns the invalid-route message', () => {
-      expect(appController.notFound()).toEqual({
-        message: 'The route you are trying to access is not valid.',
-      });
-    });
-  });
 });

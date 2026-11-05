@@ -4,6 +4,7 @@ import request from 'supertest';
 import { App } from 'supertest/types.js';
 import { AppModule } from './../src/app.module.js';
 import { AppService } from './../src/app.service.js';
+import { UploadsService } from './../src/uploads/uploads.service.js';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication<App>;
@@ -14,6 +15,8 @@ describe('AppController (e2e)', () => {
     })
       .overrideProvider(AppService)
       .useValue({ getSystemInfo: async () => ({ cpuCurrentSpeed: 1 }) })
+      .overrideProvider(UploadsService)
+      .useValue({ onModuleInit() {} })
       .compile();
 
     app = moduleFixture.createNestApplication();

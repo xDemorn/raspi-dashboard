@@ -1,4 +1,4 @@
-import { All, Controller, Get } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service.js';
 
 @Controller()
@@ -8,10 +8,5 @@ export class AppController {
   @Get('api/system')
   getSystemInfo() {
     return this.appService.getSystemInfo();
-  }
-
-  @All('*splat')
-  notFound() {
-    return { message: 'The route you are trying to access is not valid.' };
   }
 }
