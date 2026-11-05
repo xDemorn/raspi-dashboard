@@ -4,6 +4,6 @@ tmp/
 .DS_Store
 .env
 AGENTS.md
-design
-.idea
-.agents
+design/
+.idea/
+.agents/
